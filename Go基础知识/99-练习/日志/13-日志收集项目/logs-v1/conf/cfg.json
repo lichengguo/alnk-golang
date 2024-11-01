@@ -1,0 +1,22 @@
+{
+  "Configs": {
+    "Kafka": {
+      "Address":"192.168.3.121:9092",
+      "GoroutineNums": 4
+    },
+    "LogFile": [
+      {
+        "FilePath": "./mysql.log",
+        "Topic": "mysql_log"
+      },
+      {
+        "FilePath": "./nginx.log",
+        "Topic": "nginx_log"
+      },
+      {
+        "FilePath": "./redis.log",
+        "Topic": "redis_log"
+      }
+    ]
+  }
+}

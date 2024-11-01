@@ -1,0 +1,18 @@
+{
+  "Configs": {
+    "Kafka": {
+      "Address": "192.168.3.121:9092",
+      "_comment": "临时存放日志内容的通道的大小",
+      "ChanSize": 100000,
+      "Topic": [
+        "nginx_log",
+        "mysql_log"
+      ]
+    },
+    "Es": {
+      "Address": "127.0.0.1:9200",
+      "_comment":"开启多少个goroutine往ES写入数据",
+      "Nums": 6
+    }
+  }
+}

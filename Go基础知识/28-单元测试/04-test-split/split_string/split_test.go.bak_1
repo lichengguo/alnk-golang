@@ -1,0 +1,63 @@
+package split_string
+
+import (
+	"reflect"
+	"testing"
+)
+
+/*
+【单元测试】
+每个测试函数必须导入testing包
+测试函数的名字必须以Test开头，可选的后缀名必须以大写字母开头,举几个例子：
+func TestAdd(t *testing.T){ ... }
+func TestSum(t *testing.T){ ... }
+func TestLog(t *testing.T){ ... }
+其中参数t用于报告测试失败和附加的日志信息。 testing.T
+
+在命令行执行命令进行单元测试
+在 *_test.go 文件所在的目录，执行命令:
+	go test
+结果:
+	PASS
+	ok      code.oldboyedu.com/gostudy/day09/04test_split/split_string      0.005s
+
+缺点:
+    1.代码没复用
+*/
+
+//func TestSplit(t *testing.T) { // 测试函数名必须以Test开头，必须接收一个*testing.T类型参数
+//	got := Split("babcbef", "b")         // 程序输出的结果
+//	want := []string{"", "a", "c", "ef"} // 期望的结果
+//
+//	// 因为slice不能比较直接，借助反射包中的方法比较
+//	if !reflect.DeepEqual(got, want) {
+//		t.Errorf("want:%#v but got:%#v\n", want, got) // 测试失败输出错误提示
+//	}
+//}
+
+//func TestS2plit(t *testing.T) {
+//	got := Split("a:b:c", ":")
+//	want := []string{"a", "b", "c"}
+//
+//	if !reflect.DeepEqual(got, want) {
+//		t.Errorf("want:%#v but got:%#v\n", want, got)
+//	}
+//}
+
+func TestS3plit(t *testing.T) {
+	got := Split("abcef", "bc")
+	want := []string{"a", "efc"} //这里故意出错
+
+	if !reflect.DeepEqual(got, want) {
+		//测试用例失败
+		t.Errorf("want:%#v but got:%#v\n", want, got)
+	}
+}
+
+/*
+--- FAIL: TestS3plit (0.00s)
+    split_test.go:39: want:[]string{"a", "efc"} but got:[]string{"a", "ef"}
+FAIL
+exit status 1
+FAIL    code.oldboyedu.com/gostudy/day09/04test_split/split_string      0.005s
+*/

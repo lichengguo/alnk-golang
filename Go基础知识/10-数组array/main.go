@@ -1,0 +1,107 @@
+package main
+
+import (
+	"fmt"
+)
+
+// 数组:是同一种数据类型元素的集合
+// 数组的长度必须是常量，并且长度是数组类型的一部分，一旦定义，长度不能变
+// [5]int 和 [10]int 是不同的类型
+// 使用时可以修改数组成员，但是数组大小长度不可变化
+
+func main() {
+	var a1 [3]bool
+	var a2 [4]bool
+	var a122 [3]func()
+	fmt.Printf("a1:%T a2:%T a122:%T\n", a1, a2, a122) // a1:[3]bool a2:[4]bool a122:[3]func()
+
+	// 数组的初始化
+	// 如果不初始化：默认元素都是零值（布尔值：false，整型和浮点型都是0，字符串为空:""，函数为:nil）
+	//a1:[false false false] a2:[false false false false] a122:[<nil> <nil> <nil>]
+	fmt.Printf("a1:%v a2:%v a122:%v\n", a1, a2, a122)
+
+	// 初始化的方式
+	// 1.初始化方式1
+	a1 = [3]bool{true, true, true}
+	fmt.Println(a1) //[true true true]
+
+	// 2.初始化方式2：根据初始值自动推断数组的长度是多少
+	a10 := [...]int{1, 2, 3, 4, 5, 6, 7, 8}
+	fmt.Println(a10) //[1 2 3 4 5 6 7 8]
+
+	// 3.初始化方式3：根据索引来初始化
+	// a3 := [...]int{0:1, 4:2}  // 索引为0的值为1，索引为4的值为2
+	a3 := [5]int{0: 1, 4: 2} // 索引为0的值为1，索引为4的值为2
+	fmt.Println(a3)          // [1 0 0 0 2]
+
+	// 数组的遍历
+	citys := [...]string{"北京", "上海", "深圳"}
+	// 1.根据索引遍历
+	// 用 len() 函数统计数组的长度然后在进行 for 循环是可以的。
+	// 这里和string类型的遍历有差别
+	for i := 0; i < len(citys); i++ {
+		fmt.Println(citys[i])
+	}
+	// 2.for range遍历
+	for _, v := range citys {
+		fmt.Println(v)
+	}
+
+	// 多维数组
+	// 注意：多维数组只有第一层可以使用 ... 来让编译器推导数组长度
+	// [ [1 2] [3 4] [5 6] ]
+	var a11 [3][2]int
+	a11 = [3][2]int{
+		{1, 2},
+		{3, 4},
+		{5, 6},
+	}
+	fmt.Println(a11) //[[1 2] [3 4] [5 6]]
+
+	a12 := [3][2]int{
+		{1, 2},
+		{3, 4},
+		{5, 6},
+	}
+	fmt.Println(a12) //[[1 2] [3 4] [5 6]]
+
+	// 多维数组遍历
+	// 1 2 3 4 5 6
+	for _, v1 := range a11 {
+		for _, v2 := range v1 {
+			fmt.Println(v2)
+		}
+	}
+
+	// 数组是值类型
+	// 赋值和传参会复制整个数组，因此改变副本的值，不会改变本身的值
+	fmt.Println("------ 数组是值类型 ------")
+	b1 := [3]int{1, 2, 3} // [1 2 3]
+	b2 := b1              // [1 2 3] Ctrl+C Ctrl+V 相当于把world文档从文件夹A拷贝到文件夹B
+	b2[0] = 100           // b2:[100 2 3]
+	// b1[0] = 2 //数组可以修改值，但是长度不能变
+	fmt.Println(b1, b2) // b1:[1 2 3]  b2:[100 2 3]
+
+	// 数组支持 “==“、”!=” 操作符，因为内存总是被初始化过的
+	arr1 := [...]int{1, 2, 3}
+	arr2 := [...]int{1, 2, 3}
+	fmt.Println(arr1 == arr2) // true
+
+	// 指针数组
+	// [n]*T表示指针数组
+	s1 := "abc"
+	s2 := &s1
+	s3 := &s1
+	arr3 := [...]*string{s2, s3}
+	fmt.Println(arr3) //[0xc00008e240 0xc00008e240]
+
+	// 数组的指针
+	// *[n]T表示数组的指针
+	arr4 := [...]int{1, 2}
+	op := &arr4
+	fmt.Println(*op)          // 取值 [1 2]
+	fmt.Printf("%T\n", *op)   // 数组类型 [2]int
+	fmt.Printf("%p\n", op)    // 0xc0000180e0  op的值是数组arr4这个变量的指针
+	fmt.Printf("%p\n", &op)   // 0xc00000e030  op自己在内存中的地址
+	fmt.Printf("%p\n", &arr4) // 0xc0000180e0  op的值是数组arr4这个变量的指针
+}

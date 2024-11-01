@@ -1,0 +1,12 @@
+//终端输出日志
+//参数1: 日志等级[debug trace info warning error fatal]
+//参数2: 是否记录日志 true:记录
+var conlog mylog.ConLog = mylog.NewConLog("error", false)
+
+//往文件写日志
+//参数1: 日志等级[debug trace info warning error fatal]
+//参数2: 目录名称
+//参数3: 文件名称
+//参数4: 每个日志文件保存大小(单位:B)
+//参数5: 是否记录日志 true:记录
+var fileLog mylog.FileLog = *mylog.NewFileLog("Debug", "./logs", "test.log", 1*1024*1024, true)

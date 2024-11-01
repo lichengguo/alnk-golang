@@ -1,0 +1,2 @@
+[2020/09/07 17:14:00] [ERROR] [logic.go:main.loginIndex:95] [用户 alnk 登录失败!]
+[2020/09/07 17:14:36] [ERROR] [logic.go:main.register:55] [用户 ss 已经注册过了! 注册失败!]

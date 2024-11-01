@@ -1,0 +1,76 @@
+package split_string
+
+import (
+	"reflect"
+	"testing"
+)
+
+/*
+【子测试】
+
+优点:
+	1.报错明显
+	2.可以跑单个测试用例
+	3.输出结果更加灵活和详细
+*/
+
+/*
+其他一些命令:
+1.测试覆盖率
+go test -cover
+
+2.测试结果同时输出到文件
+go test -cover -coverprofile=c.out
+
+3.使用浏览器来打开, 绿色标记的语句块表示被覆盖了，而红色的表示没有被覆盖
+go tool cover -html=c.out
+*/
+
+func TestSplit(t *testing.T) {
+	// 定义一个测试用例类型
+	type test struct {
+		input string   //输入
+		sep   string   //分隔符
+		want  []string //期望结果
+	}
+
+	// 测试用例使用map存储
+	tests := map[string]test{
+		"simple":    {input: "a:b:c", sep: ":", want: []string{"a", "b", "c"}},
+		"wrong_sep": {input: "a:b:c", sep: ",", want: []string{"a:b:c"}},
+		"more_sep":  {input: "沙河有沙又有河", sep: "沙", want: []string{"", "河有", "又有河"}},
+	}
+
+	// 遍历切片，逐一执行测试用例
+	for name, tc := range tests {
+		t.Run(name, func(t *testing.T) {
+			got := Split(tc.input, tc.sep)
+			if !reflect.DeepEqual(got, tc.want) {
+				t.Errorf("name:%s want:%#v, got:%#v\n", name, tc.want, got) //将测试用例的name格式化输出
+			}
+		})
+	}
+}
+
+/*
+lichengguo@lichengguodeMacBook-Pro split_string % go test -v
+=== RUN   TestSplit
+=== RUN   TestSplit/simple
+=== RUN   TestSplit/wrong_sep
+=== RUN   TestSplit/more_sep
+--- PASS: TestSplit (0.00s)
+    --- PASS: TestSplit/simple (0.00s)
+    --- PASS: TestSplit/wrong_sep (0.00s)
+    --- PASS: TestSplit/more_sep (0.00s)
+PASS
+ok      code.oldboyedu.com/gostudy/day09/04test_split/split_string      0.005s
+
+指定某个子测试用例，例如
+lichengguo@lichengguodeMacBook-Pro split_string % go test -v -run=Split/simple
+=== RUN   TestSplit
+=== RUN   TestSplit/simple
+--- PASS: TestSplit (0.00s)
+    --- PASS: TestSplit/simple (0.00s)
+PASS
+ok      code.oldboyedu.com/gostudy/day09/04test_split/split_string      0.005s
+*/

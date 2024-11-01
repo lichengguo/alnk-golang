@@ -1,0 +1,59 @@
+package split_string
+
+import (
+	"testing"
+)
+
+/*
+[性能比较函数]
+基准测试只能得到给定操作的绝对耗时
+但是在很多性能问题是发生在两个不同操作之间的相对耗时，比如同一个函数处理1000个元素的耗时与处理1万甚至100万个元素的耗时的差别是多少?
+再或者对于同一个任务究竟使用哪种算法性能最佳？我们通常需要对两个不同算法的实现使用相同的输入来进行基准比较测试
+性能比较函数通常是一个带有参数的函数，被多个不同的Benchmark函数传入不同的值来调用
+
+
+*/
+
+// benchmarkFib 中间函数
+func benchmarkFib(b *testing.B, n int) {
+	for i := 0; i < b.N; i++ {
+		Fib(n)
+	}
+
+}
+
+// BenchmarkFib 性能比较测试
+func BenchmarkFib1(b *testing.B)  { benchmarkFib(b, 1) }
+func BenchmarkFib2(b *testing.B)  { benchmarkFib(b, 2) }
+func BenchmarkFib3(b *testing.B)  { benchmarkFib(b, 3) }
+func BenchmarkFib10(b *testing.B) { benchmarkFib(b, 10) }
+func BenchmarkFib20(b *testing.B) { benchmarkFib(b, 20) }
+func BenchmarkFib40(b *testing.B) { benchmarkFib(b, 40) }
+
+/*
+split $ go test -bench=.
+goos: darwin
+goarch: amd64
+pkg: github.com/Q1mi/studygo/code_demo/test_demo/fib
+BenchmarkFib1-4         1000000000               2.03 ns/op
+BenchmarkFib2-4         300000000                5.39 ns/op
+BenchmarkFib3-4         200000000                9.71 ns/op
+BenchmarkFib10-4         5000000               325 ns/op
+BenchmarkFib20-4           30000             42460 ns/op
+BenchmarkFib40-4               2         638524980 ns/op
+PASS
+ok      github.com/Q1mi/studygo/code_demo/test_demo/fib 12.944s
+这里需要注意的是，默认情况下，每个基准测试至少运行1秒。
+如果在Benchmark函数返回时没有到1秒，则b.N的值会按1,2,5,10,20,50，…增加，并且函数再次运行
+最终的BenchmarkFib40只运行了两次，每次运行的平均值只有不到一秒。
+像这种情况下我们应该可以使用-benchtime标志增加最小基准时间，以产生更准确的结果
+例如：
+split $ go test -bench=Fib40 -benchtime=20s
+goos: darwin
+goarch: amd64
+pkg: github.com/Q1mi/studygo/code_demo/test_demo/fib
+BenchmarkFib40-4              50         663205114 ns/op
+PASS
+ok      github.com/Q1mi/studygo/code_demo/test_demo/fib 33.849s
+这一次BenchmarkFib40函数运行了50次，结果就会更准确一些了
+*/

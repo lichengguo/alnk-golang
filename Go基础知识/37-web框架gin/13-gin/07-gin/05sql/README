@@ -1,0 +1,11 @@
+实现一个简易的图书管理系统，数据从mysql中读取，书籍有id，title，price三个字段
+
+原始数据
+CREATE TABLE `book` (
+  `id` int(50) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `price` int(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+insert  into `book`(`id`,`title`,`price`) values (1,'java',50),(2,'go',100),(3,'c',150);

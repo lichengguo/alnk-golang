@@ -1,0 +1,2 @@
+gin框架用的路由是 httproter 这个包
+httproter 会将所有的路由规则构造一个前缀树
