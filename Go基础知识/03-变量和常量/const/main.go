@@ -65,26 +65,38 @@ const (
 
 func main() {
 	// pi = 123 // 常量不能改变
-	// fmt.Println("n1:", n1)
-	// fmt.Println("n2:", n2)
-	// fmt.Println("n3:", n3)
 
-	// fmt.Println("a1:", a1)
-	// fmt.Println("a2:", a2)
-	// fmt.Println("a3:", a3)
+	fmt.Println("--- 批量声明常量 ---")
+	fmt.Println("statusOk: ", statusOk) // 200
+	fmt.Println("notFoud: ", notFoud)   // 400
+	fmt.Println("n1:", n1)              // 100
+	fmt.Println("n2:", n2)              // 100
+	fmt.Println("n3:", n3)              // 100
 
-	// fmt.Println("b1:", b1)
-	// fmt.Println("b2:", b2)
-	// fmt.Println("b3:", b3)
+	fmt.Println("--- iota ---")
+	fmt.Println("a1:", a1) // 0
+	fmt.Println("a2:", a2) // 1
+	fmt.Println("a3:", a3) // 2
+	fmt.Println("b1:", b1) // 0
+	fmt.Println("b2:", b2) // 1
+	fmt.Println("b3:", b3) // 3
 
-	// fmt.Println("c1:", c1)
-	// fmt.Println("c2:", c2)
-	// fmt.Println("c3:", c3)
-	// fmt.Println("c3:", c3)
-	// fmt.Println("c4:", c4)
+	fmt.Println("--- iota插队 ---")
+	fmt.Println("c1:", c1) // c1: 0
+	fmt.Println("c2:", c2) // c2: 100
+	fmt.Println("c3:", c3) // c3: 2
+	fmt.Println("c4:", c4) // c4: 3
 
-	fmt.Println("d1:", d1)
-	fmt.Println("d2:", d2)
-	fmt.Println("d3:", d3)
-	fmt.Println("d4:", d4)
+	fmt.Println("-- 多个常量声明在一行 ---")
+	fmt.Println("d1:", d1) // 1
+	fmt.Println("d2:", d2) // 2
+	fmt.Println("d3:", d3) // 2
+	fmt.Println("d4:", d4) // 3
+
+	fmt.Println("--- 定义量级 ---")
+	fmt.Println("KB: ", KB) // 1024
+	fmt.Println("MB: ", MB) // 1048576 1024*1024
+	fmt.Println("GB: ", GB) // 1073741824
+	fmt.Println("TB: ", TB) // 1099511627776
+	fmt.Println("PB: ", PB) // 1125899906842624
 }
