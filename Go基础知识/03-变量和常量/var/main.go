@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // Go语言中的每一个变量都有自己的类型，并且变量必须经过声明才能开始使用
-// 同一作用域内不支持重复声明,并且Go语言的变量声明后必须使用(全局声明的变量可以不必必须使用)
+// 同一作用域内不支持重复声明,并且Go语言的变量声明后必须使用(全局声明的变量可以不必 必须使用)
 // Go语言在声明变量的时候，会自动对变量对应的内存区域进行初始化操作
 // 每个变量会被初始化成其类型的默认值
 // 例如：
@@ -28,15 +28,18 @@ var (
 )
 
 func main() {
+	// 变量赋值
 	name = "Alnk"
 	age = 16
 	isOk = true
-	// var heiheihei string
-	// heiheihei = "嘿嘿嘿"
-	// Go语言中非全局变量声明后必须使用，不使用就编译不过去
-	fmt.Print(isOk)               // 在终端打印内容，不会打印换行符
+	fmt.Println(isOk)             // 在终端打印内容，不会打印换行符
 	fmt.Printf("name:%s\n", name) // %s：占位符，使用name这个变量的值去替换占位符
-	fmt.Println(age)              // 打印以后，还会在后面追加一个换行符
+	fmt.Println(age)              // Println打印以后，还会在后面追加一个换行符
+
+	// Go语言中非全局变量声明后必须使用，不使用就编译不过去
+	var heiheihei string
+	heiheihei = "嘿嘿嘿"
+	fmt.Println(heiheihei)
 
 	// 声明变量的同时赋值
 	var s1 string = "tom"
