@@ -6,19 +6,19 @@ import "fmt"
 // 简化大量的判断（一个变量和具体的值作比较）
 func main() {
 	n := 2
-	// if n == 1 {
-	// 	fmt.Println("a")
-	// }else if n == 2 {
-	// 	fmt.Println("b")
-	// }else if n == 3 {
-	// 	fmt.Println("c")
-	// }else if n == 4 {
-	// 	fmt.Println("d")
-	// }else if n == 5 {
-	// 	fmt.Println("e")
-	// }else {
-	// 	fmt.Println("No")
-	// }
+	if n == 1 {
+		fmt.Println("a")
+	} else if n == 2 {
+		fmt.Println("b")
+	} else if n == 3 {
+		fmt.Println("c")
+	} else if n == 4 {
+		fmt.Println("d")
+	} else if n == 5 {
+		fmt.Println("e")
+	} else {
+		fmt.Println("No")
+	}
 
 	// 使用switch简化代码
 	switch n {
