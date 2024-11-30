@@ -16,7 +16,7 @@ func main() {
 	fmt.Printf("%x\n", n) // 十六进制
 
 	var s = "Hello 中国"
-	fmt.Printf("字符串：%s\n", s) // 字符串
-	fmt.Printf("字符串：%v\n", s)
-	fmt.Printf("字符串：%#v\n", s) // %#v 按照类型显示，比如字符串的话打印的时候会有引号
+	fmt.Printf("字符串：%s\n", s)  // 字符串：Hello 中国
+	fmt.Printf("字符串：%v\n", s)  // 字符串：Hello 中国
+	fmt.Printf("字符串：%#v\n", s) // %#v按照类型显示,比如字符串的话打印的时候会有引号,字符串："Hello 中国"
 }
