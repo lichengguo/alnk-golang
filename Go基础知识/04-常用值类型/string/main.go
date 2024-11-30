@@ -29,7 +29,7 @@ func main() {
 	// path := "D:\\Go\\src\\code.alnkedu.com\\studygo\\day01"
 	// path := "'D:\\Go\\src\\code.alnkedu.com\\studygo\\day01'"
 	// path := "\"D:\\Go\\src\\code.alnkedu.com\\studygo\\day01\""
-	path := `"D:\Go\src\\code.alnkedu.com\studygo\day01\"`
+	path := `"D:\Go\src\\code.alnk.com\studygo\last\"`
 	fmt.Println(path)
 
 	s := "I'm ok"
@@ -76,15 +76,15 @@ bbb
 	fmt.Println("后缀: ", strings.HasSuffix(ss, "dsb"))
 
 	// 查找字符串出现的索引
-	s5 := "abcdeb"
+	s5 := "abccdebeb"
 	//     012345
-	fmt.Println("索引: ", strings.Index(s5, "c"))
-	fmt.Println("索引: ", strings.LastIndex(s5, "eb"))
+	fmt.Println("索引: ", strings.Index(s5, "c")) // 开始匹配的索引 2
+	fmt.Println("索引: ", strings.LastIndex(s5, "eb")) // 最后匹配的索引 7
 
 	// 单独的字母、汉字、符号并且用单引号括起来的表示一个字符
 	// 双引号的是字符串了
 	s6 := 'c'
-	fmt.Printf("s6: %T\n", s6) // int32 看不懂的话看下一个章节
+	fmt.Printf("s6: %T\n", s6) // int32 
 	s7 := '中'
 	fmt.Printf("s7: %T\n", s7) // int32
 	s8 := "c"

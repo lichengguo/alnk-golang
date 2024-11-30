@@ -10,11 +10,11 @@ import (
 func main() {
 	// math.MaxFloat32 // float32最大值
 	// math.MaxFloat64 // float64最大值
-	fmt.Println(math.MaxFloat32)
-	fmt.Println(math.MaxFloat64)
+	fmt.Println(math.MaxFloat32) // 3.4028234663852886e+38
+	fmt.Println(math.MaxFloat64) // 1.7976931348623157e+308
 
 	f1 := 1.23456
-	fmt.Printf("%T\n", f1)   // 默认Go语言中的小数都是float64类型
+	fmt.Printf("%T\n", f1)   // float64 默认Go语言中的小数都是float64类型
 	fmt.Printf("%f\n", f1)   // 1.234560 默认小数点后6位
 	fmt.Printf("%.2f\n", f1) // 保留2位小数 1.23
 
