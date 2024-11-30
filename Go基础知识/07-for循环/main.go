@@ -8,22 +8,25 @@ import (
 
 func main() {
 	// 基本格式
-	// for i := 0; i < 10; i++  {
-	// 	fmt.Println(i)
-	// }
+	fmt.Println("------------------ 基本格式 ---------------------")
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
 
 	// 变种1
-	// var i = 5
-	// for ; i < 10; i ++ {
-	// 	fmt.Println(i)
-	// }
+	fmt.Println("------------------ 变种1 ---------------------")
+	var i = 5
+	for ; i < 10; i++ {
+		fmt.Println(i)
+	}
 
 	// 变种2
-	// var i = 5
-	// for i < 10 {
-	// 	fmt.Println(i)
-	// 	i++
-	// }
+	fmt.Println("------------------ 变种2 ---------------------")
+	i = 5
+	for i < 10 {
+		fmt.Println(i)
+		i++
+	}
 
 	// 无限循环
 	// for {
@@ -31,12 +34,14 @@ func main() {
 	// }
 
 	// for range 循环
+	fmt.Println("------------------ for range 循环 ---------------------")
 	s := "hello中国"
 	for i, v := range s {
 		fmt.Printf("%d %c\n", i, v)
 	}
 
 	// 当i=5时就跳出for循环
+	fmt.Println("------------------ break 当i=5时就跳出for循环 ---------------------")
 	for i := 0; i < 10; i++ {
 		if i == 5 {
 			break
@@ -46,6 +51,7 @@ func main() {
 	fmt.Println("over")
 
 	// 当i=5时，跳过此次for循环（不执行for循环内部的打印语句），继续下一次循环
+	fmt.Println("------------------ continue 当i=5时,跳过此次for循环 ---------------------")
 	for i := 0; i < 10; i++ {
 		if i == 5 {
 			continue

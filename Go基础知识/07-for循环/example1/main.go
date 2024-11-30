@@ -9,15 +9,14 @@ import (
 // 2. 编写代码统计出字符串`"hello中国小王子"`中汉字的数量
 
 func main() {
-
-	// i1 := 10
-	// f1 := 1.234
-	// b1 := true
-	// s1 := "hello中国"
-	// fmt.Printf("%T %d\n", i1, i1)
-	// fmt.Printf("%T %f\n", f1, f1)
-	// fmt.Printf("%T %v\n", b1, b1)
-	// fmt.Printf("%T %s\n", s1, s1)
+	i1 := 10
+	f1 := 1.234
+	b1 := true
+	s1 := "hello中国"
+	fmt.Printf("%T %d\n", i1, i1)
+	fmt.Printf("%T %f\n", f1, f1)
+	fmt.Printf("%T %v\n", b1, b1)
+	fmt.Printf("%T %s\n", s1, s1)
 
 	s := "he中国小王llo子"
 	result := chineseCount(s)
