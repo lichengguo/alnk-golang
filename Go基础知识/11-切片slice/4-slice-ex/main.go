@@ -11,13 +11,13 @@ func main() {
 	var a = make([]int, 5, 10) // 初始化切片，长度5，容量10
 	fmt.Println(a)             // [0 0 0 0 0]
 	for i := 0; i < 10; i++ {
-		a = append(a, i)
+		a = append(a, i) // append 追加元素到切片
 	}
 	fmt.Println(a)      // [0 0 0 0 0 0 1 2 3 4 5 6 7 8 9]
 	fmt.Println(cap(a)) // 20
 
 	var a1 = [...]int{3, 7, 8, 9, 1}
-	sort.Ints(a1[:]) // 对切片进行排序
+	sort.Ints(a1[:]) // 对切片进行排序 a1是数组 a1[:]是切片
 	fmt.Println(a1)  // [1 3 7 8 9]
 
 	// 要检查切片是否为空，请始终使用len(s) == 0来判断，而不应该使用s == nil来判断
