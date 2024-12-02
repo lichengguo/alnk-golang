@@ -8,15 +8,15 @@ import (
 
 func main() {
 	// 元素类型为map的切片
-	var s1 = make([]map[string]int, 10, 10) // 切片的元素类型为map，长度10，容量10，切片已经初始化，但是里面的map类型没有初始化
-	fmt.Println(s1)                         // [map[] map[] map[] map[] map[] map[] map[] map[] map[] map[]]
+	var s1 = make([]map[string]int, 10, 10) // 切片的元素类型为map 切片长度10 容量10
+	fmt.Println(s1)                         // 切片已经初始化，但是里面的map类型没有初始化 [map[] map[] map[] map[] map[] map[] map[] map[] map[] map[]]
 
 	// s1[0]的map类型初始化
 	s1[0] = make(map[string]int, 10)
 	fmt.Printf("%T %d\n", s1[0], len(s1[0]))  // map[string]int 0
 	s1[0]["沙河"] = 10                          // s1[0]表示map，s1[0]["沙河"]表示map的key为沙河
 	fmt.Printf("s1:%T s1[0]:%T\n", s1, s1[0]) // s1:[]map[string]int  s1[0]:map[string]int 注意这里s1是切片;s1[0]是map
-	fmt.Println(s1)                           //[map[沙河:10] map[] map[] map[] map[] map[] map[] map[] map[] map[]]
+	fmt.Println(s1)                           // [map[沙河:10] map[] map[] map[] map[] map[] map[] map[] map[] map[]]
 
 	// s1[1]的map初始化
 	s1[1] = make(map[string]int)
