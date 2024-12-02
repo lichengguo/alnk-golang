@@ -10,13 +10,14 @@ import (
 // 让map按照key排序打印
 
 func main() {
-	rand.Seed(time.Now().UnixNano()) // 初始化随机数种子
+	// rand.Seed(time.Now().UnixNano()) // 初始化随机数种子(1.20开始该方法已经被弃用)
+	r := rand.New(rand.NewSource(time.Now().UnixNano())) // 初始化随机数种子
 
 	var scoreMap = make(map[string]int, 100) // 定义一个map，key为string类型，值为int类型
 
 	for i := 0; i < 50; i++ {
 		key := fmt.Sprintf("stu%02d", i) // 生成stu开头的字符串
-		value := rand.Intn(100)          // 生成0-99的随机整数
+		value := r.Intn(100)             // 生成0-99的随机整数
 		scoreMap[key] = value
 	}
 	fmt.Println(scoreMap, len(scoreMap))
