@@ -3,26 +3,26 @@ package main
 import "fmt"
 
 // point 指针
-// go语言中不会直接进行指针的运行，因此只要会使用 & * 基本上就够了
+// go语言中不会直接进行指针的运行 因此只要会使用 & * 基本上就够了
 
 // make和new的区别
 // make和new都是用来申请内存的
-// new很少用，一般用来给基本数据类型申请内存，`string`、`int`,返回的是对应类型的指针(*string、*int)
-// make是用来给`slice`、`map`、`chan`申请内存的，make函数返回的的是对应的这三个类型本身
+// new很少用 一般用来给基本数据类型申请内存 string int返回的是对应类型的指针(*string、*int)
+// make是用来给slice map chan申请内存的 make函数返回的的是对应的这三个类型本身
 
 func main() {
-	// 1. &:取内存地址
+	fmt.Println("------------- & 取内存地址 ------------")
 	n := 18
-	p := &n               // &n 取n变量在内存中的地址，并且赋值给p变量
+	p := &n               // &n取n变量在内存中的地址，并且赋值给p变量
 	fmt.Println(p)        // 0xc00001a070 n变量在内存中的地址
 	fmt.Println(&n)       // 0xc00001a070 n变量在内存中的地址
 	fmt.Println(*p)       // 取值 18
 	fmt.Println(*(&n))    // 18
 	fmt.Printf("%T\n", p) // *int：int类型的指针
 	fmt.Println(&p)       // 0xc00000e028 p变量自己在内存中的地址
-	fmt.Println(*(&p))    // 0xc00001a070 取p变量指向的值，即n的内存地址
+	fmt.Println(*(&p))    // 0xc00001a070 取p变量指向的值，即n的内存地址 18
 
-	// 2. *:根据地址取值
+	fmt.Println("---------- *:根据地址取值 -----------------")
 	m := *p                // 这个是取出p变量中存放的n的内存地址所指向的值
 	fmt.Println(m)         // 18
 	fmt.Printf("%T\n", m)  // int
