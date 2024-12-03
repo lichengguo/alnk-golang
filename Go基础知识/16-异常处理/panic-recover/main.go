@@ -7,7 +7,7 @@ import "fmt"
 
 // 注意
 // 1.recover()必须搭配defer使用
-// defer一定要在可能引发panic的语句之前定义。
+// defer一定要在可能引发panic的语句之前定义
 
 func funcA() {
 	fmt.Println("this is funcA")
@@ -21,7 +21,7 @@ func funcB() {
 		fmt.Println("err: ", err)
 		fmt.Println("释放数据库连接...")
 	}()
-	panic("程序出现了严重的BUG!!!!") //程序崩溃退出
+	panic("程序出现了严重的BUG!!!!") // 程序崩溃退出
 	// fmt.Println("this is funcB")
 }
 

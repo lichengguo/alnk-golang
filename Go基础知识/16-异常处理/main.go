@@ -16,7 +16,7 @@ func hello() {
 		fmt.Println("hello")
 		time.Sleep(time.Second * 1)
 	}
-	panic("hello挂了")
+	panic("goroutine hello挂了")
 
 }
 
