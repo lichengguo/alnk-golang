@@ -32,12 +32,12 @@ func f1() {
 
 func main() {
 	f1()
-	//fmt.Println(name) //函数内部定义的变量只能在改函数内部使用
+	// fmt.Println(name) //函数内部定义的变量只能在改函数内部使用
 
-	//语句块作用域
+	// 语句块作用域
 	if i := 10; i < 18 {
 		fmt.Println("读书")
 	}
-	//不能使用if语句中i变量，if语句中的i变量只能在改if语句块中使用，同理还有for循环也一样
-	//fmt.Println(i)
+	// 不能使用if语句中i变量，if语句中的i变量只能在改if语句块中使用，同理还有for循环也一样
+	// fmt.Println(i)
 }
