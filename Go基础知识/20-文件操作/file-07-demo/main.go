@@ -20,6 +20,6 @@ func f(arg int) {
 }
 
 func main() {
-	f(eat | da)         //101
-	f(eat | sleep | da) //111
+	f(eat | da)         // 101
+	f(eat | sleep | da) // 111
 }

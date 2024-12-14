@@ -26,7 +26,7 @@ func f2() {
 	defer tmpFile.Close()
 
 	// 3.读取源文件部分内容写入临时文件
-	var ret [2]byte //读取了2个字节
+	var ret [2]byte // 读取了2个字节
 	n, err := f.Read(ret[:])
 	if err != nil {
 		fmt.Printf("read from file failed, err:%v\n", err)

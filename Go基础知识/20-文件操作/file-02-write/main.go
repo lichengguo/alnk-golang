@@ -31,7 +31,8 @@ Write和WriteString
 // 1.os.OpenFile() 打开文件写内容
 func writeDemo1() {
 	// 1.打开文件
-	fileObj, err := os.OpenFile("./test1.txt", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644) //只写，如果文件不存在则创建，如果存在则清空
+	// 只写，如果文件不存在则创建，如果存在则清空
+	fileObj, err := os.OpenFile("./test1.txt", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644) 
 	if err != nil {
 		fmt.Printf("open file failed, err:%v\n", err)
 		return
@@ -59,7 +60,7 @@ func writeDemo1() {
 // 2.bufio.NewWriter() 写入文件
 func writeDemo2() {
 	// 1.打开文件
-	fileObj, err := os.OpenFile("./test2.txt", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644) //追加写入，不存在则创建
+	fileObj, err := os.OpenFile("./test2.txt", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644) // 追加写入，不存在则创建
 	if err != nil {
 		fmt.Printf("open file failed, err:%v\n", err)
 		return
@@ -78,7 +79,7 @@ func writeDemo2() {
 // 3.ioutil.WriteFile 写入文件
 func writeDemo3() {
 	str := "hello沙河\n"
-	err := os.WriteFile("./test3.txt", []byte(str), 0644) //这种写入方式会清空被写入文件之前的数据
+	err := os.WriteFile("./test3.txt", []byte(str), 0644) // 这种写入方式会清空被写入文件之前的数据
 	if err != nil {
 		fmt.Printf("write file failed, err:%v\n", err)
 		return
