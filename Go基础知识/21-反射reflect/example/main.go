@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-//ini配置文件解析器（尽量掌握）
+//ini配置文件解析器
 
 //MysqlConfig MySQL配置结构体
 type MysqlConfig struct {

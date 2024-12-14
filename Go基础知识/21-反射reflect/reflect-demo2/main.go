@@ -5,9 +5,10 @@ import (
 	"reflect"
 )
 
-//reflect 反射
+// r eflect 反射
 /*
-任意值通过reflect.TypeOf()获得反射对象信息后，如果它的类型是结构体，可以通过反射值对象（reflect.Type）的NumField()和Field()方法获得结构体成员的详细信息。
+任意值通过reflect.TypeOf()获得反射对象信息后，如果它的类型是结构体，
+可以通过反射值对象（reflect.Type）的NumField()和Field()方法获得结构体成员的详细信息。
 
 reflect.Type中与获取结构体成员相关的的方法如下表所示
 Field(i int) StructField										根据索引，返回索引对应的结构体字段的信息。

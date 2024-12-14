@@ -5,8 +5,7 @@ import (
 	"reflect"
 )
 
-//reflect 反射
-//https://www.liwenzhou.com/posts/Go/13_reflect/
+// reflect 反射
 
 type Cat struct {
 }
