@@ -7,11 +7,24 @@ import (
 // 方法
 
 // 标识符：变量名 函数名 类型名 方法名
-// Go语言中如果标识符首字母是大写的，就表示对外部包可见（暴露的，共有的）
+// Go语言中如果标识符首字母是大写的 就表示对外部包可见
 
 // dog 这是一个狗的结构体
 type dog struct {
 	name string
+}
+
+// newDog 狗构造函数
+func newDog(name string) dog {
+	return dog{
+		name: name,
+	}
+}
+
+// 方法是作用于特定类型的函数
+// 接收者：表示的是调用该方法的具体类变量 多用类型名首字符小写表示
+func (d dog) wang() {
+	fmt.Printf("%s:汪汪汪\n", d.name)
 }
 
 // person 人的结构体
@@ -26,19 +39,6 @@ func newPerson(name string, age int) *person {
 		name: name,
 		age:  age,
 	}
-}
-
-// newDog 狗构造函数
-func newDog(name string) dog {
-	return dog{
-		name: name,
-	}
-}
-
-// 方法是作用于特定类型的函数
-// 接收者：表示的是调用该方法的具体类变量，多用类型名首字符小写表示
-func (d dog) wang() {
-	fmt.Printf("%s:汪汪汪\n", d.name)
 }
 
 // 使用值接收者：传递拷贝进去
@@ -56,15 +56,14 @@ func (p *person) dream() {
 }
 
 func main() {
-	d1 := newDog("zhoulin")
+	d1 := newDog("tom")
 	d1.wang()
 
-	p1 := newPerson("元帅", 18)
-	//p1.wang()
-	fmt.Println(p1.age) //18
+	p1 := newPerson("alnk", 18)
+	fmt.Println(p1.age) // 18
 	p1.guonian()
-	fmt.Println(p1.age) //18
+	fmt.Println(p1.age) // 18
 	p1.zhenguonian()
-	fmt.Println(p1.age) //19
-	p1.dream()          //不上班也能挣钱！
+	fmt.Println(p1.age) // 19
+	p1.dream()          // 不上班也能挣钱！
 }

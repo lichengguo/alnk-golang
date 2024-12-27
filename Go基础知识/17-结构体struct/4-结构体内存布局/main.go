@@ -20,13 +20,13 @@ func main() {
 		b: int8(20),
 		c: int8(30),
 	}
-	fmt.Printf("%p\n", &(m.a))    //0xc0000b4002
-	fmt.Printf("%p\n", &(m.b))    //0xc0000b4003
-	fmt.Printf("%p\n", &(m.c))    //0xc0000b4004
-	fmt.Println(unsafe.Sizeof(m)) //3
+	fmt.Printf("%p\n", &(m.a))    // 0xc0000b4002
+	fmt.Printf("%p\n", &(m.b))    // 0xc0000b4003
+	fmt.Printf("%p\n", &(m.c))    // 0xc0000b4004
+	fmt.Println(unsafe.Sizeof(m)) // 3
 
 	// 空结构体
 	// 空结构体是不占用空间的
 	var v struct{}
-	fmt.Println(unsafe.Sizeof(v)) //0
+	fmt.Println(unsafe.Sizeof(v)) // 0
 }

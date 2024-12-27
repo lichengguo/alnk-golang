@@ -14,10 +14,10 @@ type person struct {
 
 func main() {
 	p1 := person{
-		"周玲",
+		"tom",
 		9000,
 	}
-	fmt.Println(p1)        //{周玲 9000}
-	fmt.Println(p1.string) //周玲
-	fmt.Println(p1.int)    //9000
+	fmt.Println(p1)        // {tom 9000}
+	fmt.Println(p1.string) // tom
+	fmt.Println(p1.int)    // 9000
 }

@@ -17,7 +17,7 @@ type dog struct {
 
 // 构造函数：约定成俗用new
 // 当结构体比较大的时候尽量使用结构体指针，减少程序的内存开销
-func newPerson(name string, age int) *person { //返回值是person类型的指针
+func newPerson(name string, age int) *person { // 返回值是person类型的指针
 	return &person{
 		name: name,
 		age:  age,
@@ -31,10 +31,10 @@ func newDog(name string) *dog {
 }
 
 func main() {
-	p1 := newPerson("园林", 18)
-	p2 := newPerson("周林", 9000)
-	fmt.Println(p1, p2) //&{园林 18} &{周林 9000}
+	p1 := newPerson("alnk", 18)
+	p2 := newPerson("tom", 9000)
+	fmt.Println(p1, p2) // &{alnk 18} &{tom 9000}
 
-	d1 := newDog("周林")
-	fmt.Println(d1) //&{周林}
+	d1 := newDog("wangwang")
+	fmt.Println(d1) // &{wangwang}
 }

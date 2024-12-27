@@ -5,7 +5,7 @@ import (
 )
 
 // 结构体是值类型
-// 值类型和引用类型 https://www.cnblogs.com/hq82/p/11072005.html
+// 值类型和引用类型
 // 值类型:int、float、bool、string、数组、struct
 // 引用类型:指针、slice、map、chan、接口
 
