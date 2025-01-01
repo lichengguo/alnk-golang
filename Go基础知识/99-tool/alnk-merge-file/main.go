@@ -77,11 +77,13 @@ func main() {
 		endFileName string // 合并后的文件名
 	)
 
+	// 命令行参数解析
 	flag.StringVar(&suffix, "suffix", "yaml", "文件名的后缀,默认为yaml")
+	flag.StringVar(&endFileName, "endFileName", "alnk-go-k8s", "默认为alnk-go-k8s")
 	flag.Parse()
-	// 通过flag获取endFileName的后缀
-	flag.StringVar(&endFileName, "endFileName", fmt.Sprintf("%s.%s", "alnk-go-k8s", suffix), "合并后的文件名,默认为alnk-go-k8s.yaml")
-	flag.Parse()
+	if endFileName == "alnk-go-k8s" { // 如果只输入了匹配的后缀名，那么默认文件名需要加上后缀
+		endFileName = endFileName + "." + suffix
+	}
 
 	// 获取程序执行目录下指定后缀文件名称
 	fileNames, err := getFile(suffix)
