@@ -6,18 +6,18 @@ import "fmt"
 // 同一个结构体可以实现多个接口
 // 接口还可以嵌套
 
-// 接口
+// animal接口
 type animal interface {
-	mover
-	eater
+	mover // 嵌套mover
+	eater // 嵌套eater
 }
 
-// 接口
+// mover接口
 type mover interface {
 	move()
 }
 
-// 接口
+// eater接口
 type eater interface {
 	eat(string)
 }
@@ -44,9 +44,9 @@ func main() {
 		feet: 4,
 	}
 
-	var a1 animal
+	var a1 animal // 定义一个animal类型的变量
 
-	a1 = &c1
+	a1 = &c1      // 将cat赋值给animal类型的变量
 	a1.move()     // 走猫步...
 	a1.eat("小黄鱼") // 猫吃小黄鱼...
 

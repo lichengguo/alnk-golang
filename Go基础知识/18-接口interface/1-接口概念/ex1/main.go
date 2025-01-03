@@ -19,7 +19,7 @@ type weixin struct {
 
 // 定义结构体方法 实现接口中的方法
 func (w weixin) pay() {
-	fmt.Printf("尊敬的[%s],欢迎使用微信支付~\n", w.name)
+	fmt.Printf("尊敬的[%s], 欢迎使用微信支付~\n", w.name)
 }
 
 // 定义结构体
@@ -29,7 +29,7 @@ type alipay struct {
 
 // 定义结构体方法 实现接口中的方法
 func (a alipay) pay() {
-	fmt.Printf("欢迎[%s]使用阿里支付~\n", a.name)
+	fmt.Printf("欢迎[%s], 使用阿里支付~\n", a.name)
 }
 
 func main() {
@@ -40,9 +40,9 @@ func main() {
 	pay(w)
 	pay(a)
 
-	////实现接口以后就不用每次都这么写重复的代码了
-	//p1 := weixin{"Alnk"}
-	//p1.pay()
-	//p2 := alipay{"tom"}
-	//p2.pay()
+	// 实现接口以后就不用每次都这么写重复的代码了
+	// p1 := weixin{"Alnk"}
+	// p1.pay()
+	// p2 := alipay{"tom"}
+	// p2.pay()
 }
