@@ -1,6 +1,6 @@
-module 06-nsq-demo
+module nsq-demo
 
-go 1.20
+go 1.22.8
 
 require github.com/nsqio/go-nsq v1.1.0
 
