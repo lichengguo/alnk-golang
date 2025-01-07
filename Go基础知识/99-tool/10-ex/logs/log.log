@@ -1,6 +1,0 @@
-[2020/09/07 17:12:23] [INFO] [logic.go:main.register:55] [用户 alnk 已经注册过了! 注册失败!]
-[2020/09/07 17:13:10] [INFO] [logic.go:main.loginIndex:92] [用户 alnk 登录成功!]
-[2020/09/07 17:14:00] [ERROR] [logic.go:main.loginIndex:95] [用户 alnk 登录失败!]
-[2020/09/07 17:14:00] [INFO] [logic.go:main.loginIndex:96] [用户 alnk 登录失败!]
-[2020/09/07 17:14:23] [INFO] [logic.go:main.register:45] [用户 ss 注册成功!]
-[2020/09/07 17:14:36] [ERROR] [logic.go:main.register:55] [用户 ss 已经注册过了! 注册失败!]
